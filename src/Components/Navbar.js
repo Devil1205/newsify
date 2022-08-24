@@ -2,17 +2,11 @@ import React, { Component } from 'react'
 
 import { Link } from 'react-router-dom'
 
-let update= {country:"in",needUpdate: false};
-let drop = (element)=>{
-    // console.log(element.target.innerText);
-    update={country:element.target.innerText,needUpdate: true};
-}
-export {update}
 export class Navbar extends Component {
     render() {
         return (
             <div>
-                <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+                <nav className={`navbar navbar-expand-lg navbar-${this.props.theme} bg-${this.props.theme}`}>
                     <div className="container-fluid">
                         <Link className="navbar-brand" to="/">Newsify</Link>
                         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -44,7 +38,7 @@ export class Navbar extends Component {
                                 <li className="nav-item">
                                     <Link className="nav-link" to="/technology">Technology</Link>
                                 </li>
-                                <li className="nav-item dropdown">
+                                {/* <li className="nav-item dropdown">
                                     <div className="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                         Countries
                                     </div>
@@ -52,8 +46,12 @@ export class Navbar extends Component {
                                         <li><button className="dropdown-item countryBtn" onClick={drop}>in</button></li>
                                         <li><button className="dropdown-item countryBtn" onClick={drop}>us</button></li>
                                     </ul>
-                                </li>
+                                </li> */}
                             </ul>
+                                    <div className="form-check form-switch" style={{float: "right"}}>
+                                        <input className="form-check-input" type="checkbox" id="toggleTheme" onClick={this.props.toggleTheme}/>
+                                            <label className={`form-check-label text-${this.props.color}`} htmlFor="flexSwitchCheckDefault">Dark Mode</label>
+                                    </div>
                         </div>
                     </div>
                 </nav>
