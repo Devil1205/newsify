@@ -1,11 +1,10 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-export class NewsItem extends Component {
-    render() {
-        let {title,description,time,author,source,imageUrl,newsUrl} = this.props;
+const NewsItem = (props) => {
+        const {title,description,time,author,source,imageUrl,newsUrl} = props;
         return (
             <div>
-                <div className="card mx-3" style={{ minHeight: "30rem" ,backgroundSize: "40px", backgroundColor: this.props.theme==="dark"?"rgb(32 10 64 / 15%)":"white", color: this.props.color}}>
+                <div className="card mx-3" style={{ minHeight: "30rem" ,backgroundSize: "40px", backgroundColor: props.theme==="dark"?"rgb(32 10 64 / 15%)":"white", color: props.color}}>
                     <span className="badge rounded-pill bg-danger" style={{position: "absolute", width: "fit-content", alignSelf: "flex-end" }}>{source}</span>
                     <img src={imageUrl} className="card-img-top" alt="..." style={{height: "200px"}}  />
                     <div className="card-body">
@@ -18,6 +17,4 @@ export class NewsItem extends Component {
             </div>
         )
     }
-}
-
 export default NewsItem

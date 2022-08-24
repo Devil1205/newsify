@@ -1,12 +1,11 @@
-import React, { Component } from 'react'
+import React from 'react'
 
 import { Link } from 'react-router-dom'
 
-export class Navbar extends Component {
-    render() {
+const Navbar = (props) => {
         return (
             <div>
-                <nav className={`navbar navbar-expand-lg navbar-${this.props.theme} bg-${this.props.theme}`}>
+                <nav className={`navbar navbar-expand-lg navbar-${props.theme} bg-${props.theme}`}>
                     <div className="container-fluid">
                         <Link className="navbar-brand" to="/">Newsify</Link>
                         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -49,8 +48,8 @@ export class Navbar extends Component {
                                 </li> */}
                             </ul>
                                     <div className="form-check form-switch" style={{float: "right"}}>
-                                        <input className="form-check-input" type="checkbox" id="toggleTheme" onClick={this.props.toggleTheme}/>
-                                            <label className={`form-check-label text-${this.props.color}`} htmlFor="flexSwitchCheckDefault">Dark Mode</label>
+                                        <input className="form-check-input" type="checkbox" id="toggleTheme" onClick={props.toggleTheme}/>
+                                            <label className={`form-check-label text-${props.color}`} htmlFor="flexSwitchCheckDefault">Dark Mode</label>
                                     </div>
                         </div>
                     </div>
@@ -58,5 +57,4 @@ export class Navbar extends Component {
             </div>
         )
     }
-}
 export default Navbar 
