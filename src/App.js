@@ -11,20 +11,18 @@ import {
   Route,
 } from "react-router-dom";
 
-let country = "in";
 let pageSize = 6;
 const App = () => {
   const [progress, setProgress] = useState(10);
   const [theme, setTheme] = useState("light");
   const [color, setColor] = useState("black");
-  // setProgress = (progress)=>{
-  //   setState({progress: progress})
-  // }
+  const [country, setCountry] = useState(17)
+
   const toggleTheme = ()=>{
     if(theme==="light")
     {
       setTheme("dark");
-      setColor("White");
+      setColor("white");
       document.body.style.backgroundColor="#0d041b";
       console.log(theme);
     }
@@ -39,7 +37,7 @@ const App = () => {
     return (
       <>
         <Router>
-          <Navbar toggleTheme={toggleTheme} theme={theme} color={color}/>
+          <Navbar toggleTheme={toggleTheme} theme={theme} color={color} setCountry={setCountry}/>
           <LoadingBar
             color='#f11946'
             progress={progress}
