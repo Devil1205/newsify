@@ -10,7 +10,8 @@ const Navbar = (props) => {
           element.addEventListener("click", ()=>{props.setCountry(index)});
       });
     
-    }, [])
+    }, // eslint-disable-next-line
+    [])
     
     return (
         <div>
