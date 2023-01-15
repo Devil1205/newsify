@@ -2,6 +2,9 @@ import React,{useEffect} from 'react'
 
 import { Link } from 'react-router-dom'
 
+import logo from "../Images/logo.png";
+
+
 const Navbar = (props) => {
 
     useEffect(() => {
@@ -17,7 +20,10 @@ const Navbar = (props) => {
         <div>
             <nav className={`navbar navbar-expand-lg navbar-${props.theme} bg-${props.theme}`}>
                 <div className="container-fluid">
-                    <Link className="navbar-brand" to="/">Newsify</Link>
+                    <Link className="navbar-brand" to="/" style={{padding: "0px", fontWeight: "500"}}>
+                        <img src={logo} alt="" style={{height:"50px", filter: `invert(${props.theme==="dark"?"1":"0"})`}}/>
+                        Newsify
+                    </Link>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>
